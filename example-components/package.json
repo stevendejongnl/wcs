@@ -1,0 +1,18 @@
+{
+  "name": "example-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "preserve": "npm run build",
+    "serve": "http-server implementations",
+    "generate": "custom-elements-manifest analyze --outdir ../"
+  },
+  "author": "Steven de Jong (steven@steven-dejong.nl)",
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.9.0",
+    "http-server": "^14.1.1",
+    "typescript": "^5.3.3"
+  }
+}
