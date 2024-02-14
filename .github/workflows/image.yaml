@@ -3,7 +3,7 @@ name: Push Docker image to GitHub Container Registry
 on:
   push:
     branches:
-      - main  # of de naam van je standaard branch
+      - main
 
 jobs:
   build:
@@ -27,4 +27,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: stevendejongnl/wcs:latest
+        tags: stevendejong/wcs:latest
