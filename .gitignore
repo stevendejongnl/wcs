@@ -2,4 +2,6 @@
 __pycache__
 node_modules
 *.js
+*egg-info
+dist
 custom-elements.json
