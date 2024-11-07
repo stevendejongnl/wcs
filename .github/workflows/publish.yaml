@@ -19,3 +19,15 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1.11
         with:
           repository-url: https://test.pypi.org/legacy/
+
+  pypi-publish:
+    name: Publish to PyPI
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/webcomponentsscan
+    permissions:
+      id-token: write
+    steps:
+      - name: Publish package distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1.11
