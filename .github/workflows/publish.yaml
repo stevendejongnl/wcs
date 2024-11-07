@@ -1,0 +1,12 @@
+jobs:
+  pypi-test-publish:
+    name: Publish to PyPI Test
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://test.pypi.org/project/${{ github.repository }}
+    permissions:
+      id-token: write
+    steps:
+      - name: Publish package distribution to PyPI test
+        uses: pypa/gh-action-pypi-publish@release/v1
