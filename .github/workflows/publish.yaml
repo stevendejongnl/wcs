@@ -16,6 +16,6 @@ jobs:
       id-token: write
     steps:
       - name: Publish package distribution to PyPI test
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           repository-url: https://test.pypi.org/legacy/
