@@ -1,3 +1,10 @@
+name: Publish to PyPI
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   pypi-test-publish:
     name: Publish to PyPI Test
