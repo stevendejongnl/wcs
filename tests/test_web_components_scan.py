@@ -1,6 +1,5 @@
 from unittest import TestCase
 
-from WebComponentsScan.web_components_scan import WebComponentsScan
 
 
 class TestWebComponentsScan(TestCase):
