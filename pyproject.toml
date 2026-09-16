@@ -27,7 +27,8 @@ packages = ["webcomponentsscan"]
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
 version_variables = ["webcomponentsscan/__init__.py:__version__"]
-build_command = "uv build"
+build_command = "uv lock && uv build"
+assets = ["uv.lock"]
 major_on_zero = false
 commit_parser = "conventional"
 
