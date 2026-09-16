@@ -51,7 +51,7 @@ class WebComponentsScan:
                 if file.endswith(".html"):
                     file_list.append(os.path.join(root, file))
 
-        return file_list
+        return sorted(file_list)
 
     @staticmethod
     def search_for_components_in_html_file(path: str, tags: list[str]) -> dict[str, list[str]]:

@@ -4,4 +4,6 @@ node_modules
 *.js
 *egg-info
 dist
+.venv
 custom-elements.json
+!tests/custom-elements.json
