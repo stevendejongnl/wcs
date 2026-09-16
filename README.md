@@ -7,19 +7,40 @@ With this file we can scan html files for implementations.
 # Installation
 Clone this repository to your local machine.
 
-# Install the required Python dependencies using pip:
+Dependencies are managed with [uv](https://docs.astral.sh/uv/). Install them with:
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 # Usage
 Run the analyzer script with the following command:
 ```bash
-python main.py --scan-path <path_to_directory> --manifest-path <path_to_manifest>
+uv run python main.py --scan-path <path_to_directory> --manifest-path <path_to_manifest>
 ```
 
 Replace `<path_to_directory>` with the path to the directory containing your HTML files.
 And `<path_to_manifest>` with the path to your `custom-elements.json`.
+
+Or run it via the published Docker image:
+```bash
+docker run --rm -v "$PWD":/data stevendejong/wcs --scan-path /data --manifest-path /data/custom-elements.json
+```
+
+# Development
+```bash
+make sync   # install dependencies
+make test   # run the test suite
+make lint   # run mypy + flake8
+```
+
+# Releases
+Versioning, changelogs, PyPI and Docker Hub publishing are automated with
+[python-semantic-release](https://python-semantic-release.readthedocs.io/), driven by
+[Conventional Commits](https://www.conventionalcommits.org/) on `main` (`fix:`, `feat:`,
+`feat!:`/`BREAKING CHANGE:`, etc.). Merging a commit with a release-worthy prefix to `main`
+triggers `.github/workflows/release.yaml`, which bumps the version, tags the release, and
+publishes the package to PyPI and the image to Docker Hub as `stevendejong/wcs:<version>`
+and `stevendejong/wcs:latest`.
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
