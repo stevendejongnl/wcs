@@ -1,7 +1,7 @@
 import argparse
 import json
 
-from WebComponentsScan.web_components_scan import WebComponentsScan
+from webcomponentsscan.web_components_scan import WebComponentsScan
 
 
 def main() -> None:

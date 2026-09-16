@@ -15,7 +15,7 @@ class TestWebComponentsScan(TestCase):
         )
 
     def test_retrieving_manifest_file_list_all_custom_element_tags(self) -> None:
-        tags = self.wcs.get_custom_element_tags(manifest_file_path="../custom-elements.json")
+        tags = self.wcs.get_custom_element_tags(manifest_file_path="./custom-elements.json")
 
         self.assertEqual(['henk-the-men', 'henks-side-chick', 'side-chick-tina'], tags)
 
@@ -28,8 +28,8 @@ class TestWebComponentsScan(TestCase):
         files = self.wcs.list_html_files(path='../example-components/implementations')
 
         self.assertEqual([
-            '../example-components/implementations/index.html',
             '../example-components/implementations/henk.html',
+            '../example-components/implementations/index.html',
             '../example-components/implementations/tina.html',
         ], files)
 
@@ -48,17 +48,17 @@ class TestWebComponentsScan(TestCase):
     def test_full_scan(self) -> None:
         scan_results = self.wcs.scan_html(
             path='../example-components/implementations',
-            manifest='../custom-elements.json'
+            manifest='./custom-elements.json'
         )
 
         self.assertEqual([
-            '../example-components/implementations/index.html:13',
-            '../example-components/implementations/henk.html:13'
+            '../example-components/implementations/henk.html:13',
+            '../example-components/implementations/index.html:13'
         ], scan_results['henk-the-men'])
 
         self.assertEqual([
-            '../example-components/implementations/index.html:14',
-            '../example-components/implementations/henk.html:14'
+            '../example-components/implementations/henk.html:14',
+            '../example-components/implementations/index.html:14'
         ], scan_results['henks-side-chick'])
 
         self.assertEqual([

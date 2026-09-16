@@ -1,0 +1,67 @@
+{
+    "schemaVersion": "1.0.0",
+    "readme": "",
+    "modules": [
+        {
+            "kind": "javascript-module",
+            "path": "henk.js",
+            "declarations": [
+                {
+                    "kind": "class",
+                    "description": "",
+                    "name": "Henk",
+                    "tagName": "henk-the-men",
+                    "customElement": true
+                },
+                {
+                    "kind": "class",
+                    "description": "",
+                    "name": "HenksSideChick",
+                    "tagName": "henks-side-chick",
+                    "customElement": true
+                }
+            ],
+            "exports": [
+                {
+                    "kind": "custom-element-definition",
+                    "name": "henk-the-men",
+                    "declaration": {
+                        "name": "Henk",
+                        "module": "henk.js"
+                    }
+                },
+                {
+                    "kind": "custom-element-definition",
+                    "name": "henks-side-chick",
+                    "declaration": {
+                        "name": "HenksSideChick",
+                        "module": "henk.js"
+                    }
+                }
+            ]
+        },
+        {
+            "kind": "javascript-module",
+            "path": "tina.js",
+            "declarations": [
+                {
+                    "kind": "class",
+                    "description": "",
+                    "name": "Tina",
+                    "tagName": "side-chick-tina",
+                    "customElement": true
+                }
+            ],
+            "exports": [
+                {
+                    "kind": "custom-element-definition",
+                    "name": "side-chick-tina",
+                    "declaration": {
+                        "name": "Tina",
+                        "module": "tina.js"
+                    }
+                }
+            ]
+        }
+    ]
+}
